@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>d1ff</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(background.jpg);
+            background-size: 100%;
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .container {
+            width: 320px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.7);
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-image: url('d1ff.jpg');
+            background-size: cover;
+            margin: 0 auto 20px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: rotate(10deg) scale(1.05);
+        }
+        .name {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            background-color: #0088cc;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .social-links a svg {
+            margin-right: 8px;
+            width: 24px; 
+            height: 24px; 
+        }
+        .social-links a:hover {
+            background-color: #00aaff;
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background: url(mobile.jpg);
+                background-size: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-pic"></div>
+        <div class="name">d1ff</div>
+        <div class="social-links">
+            <a href="https://t.me/d1ff3r3n7d1m3ns10n" class="telegram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="currentColor">
+                    <svg width="800px" height="800px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none"><path stroke="#002233" stroke-width="12" d="M144.89 31.212c12.573-4.107 20.025 2.553 16.026 15.044-10.038 31.391-29.749 88.653-42.277 124.81-3.281 9.457-18.463 9.087-22.275-.171-6.54-15.873-16.168-34.351-29.308-47.819-12.565-12.876-30.16-22.185-45.783-28.55-9.515-3.877-9.852-19.706-.075-22.895L144.89 31.21Z"/></svg>-->></svg>
+                Telegram
+            </a>
+        </div>
+    </div>
+</body>
+</html>
