@@ -2,41 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>r3v0</title>
+    <title>ghosvx.xyz</title>
     <style>
         body {
             margin: 0;
-            height: 100vh;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #1d2b64, #f8cdda);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            height: 100vh;
+            background-color: #0e0e0e;
             overflow: hidden;
+            position: relative;
+            color: #b10000;
         }
 
-        h1 {
-            font-size: 10vw;
-            font-weight: 800;
-            background: linear-gradient(90deg, #f7ff00, #db36a4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeIn 3s ease-in-out infinite alternate;
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(50, 0, 0, 0.15), transparent 70%);
+            animation: pulse 6s infinite;
+            z-index: 0;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0.5;
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.1;
             }
-            to {
-                opacity: 1;
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .scar {
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(180, 0, 0, 0.8), transparent);
+            transform: rotate(-45deg);
+            box-shadow: 0 0 5px rgba(100, 0, 0, 0.7);
+        }
+
+        .scar::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(100, 0, 0, 0.8), transparent);
+            transform: rotate(90deg);
+            top: -10px;
+            left: 10px;
+        }
+
+        .scar.top-left {
+            top: 20px;
+            left: 20px;
+        }
+
+        .scar.top-right {
+            top: 20px;
+            right: 20px;
+            transform: rotate(45deg);
+        }
+
+        .scar.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            transform: rotate(45deg);
+        }
+
+        .scar.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(-45deg);
+        }
+
+        .text {
+            position: relative;
+            z-index: 1;
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            text-transform: lowercase;
+            letter-spacing: 2px;
+            color: #b10000;
+            text-shadow: 1px 1px 3px #400000, 0 0 2px #800000;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                transform: translate(0, 0);
+            }
+            10% {
+                transform: translate(-2px, 2px);
+            }
+            30% {
+                transform: translate(2px, -1px);
+            }
+            50% {
+                transform: translate(-1px, 1px);
+            }
+            70% {
+                transform: translate(1px, -2px);
+            }
+            90% {
+                transform: translate(-1px, 2px);
             }
         }
     </style>
 </head>
 <body>
-    <h1>.xyz</h1>
-</body>
-</html>
-
+    <div class="scar top-left"></div>
+    <div class="scar top-right"></div>
+    <div class="scar bottom-left"></div>
+    <div class="scar bottom-right"></div>
+    <div class="text">self harm</div>
