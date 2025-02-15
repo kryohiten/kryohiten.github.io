@@ -1,9 +1,10 @@
 # meta developer: @ghosvxmodules
+# requires: moviepy
 
 import os
-import subprocess
 import random
 import string
+from moviepy.editor import ImageClip
 from .. import loader, utils
 
 @loader.tds
@@ -51,13 +52,10 @@ class ImageToGifMod(loader.Module):
 
         video_path = f"downloads/{file_name}.mp4"
 
-        ffmpeg_command = [
-            'ffmpeg', '-loop', '1', '-i', photo, '-c:v', 'libx264', '-t', '2', '-pix_fmt', 'yuv420p',
-            '-vf', 'scale=trunc(iw/2)*2:trunc(ih/2)*2', video_path, '-y'
-        ]
-
         try:
-            subprocess.run(ffmpeg_command, check=True)
+            clip = ImageClip(photo).set_duration(2)
+            clip.write_videofile(video_path, fps=24)
+            clip.close()
 
             await message.client.send_file(message.chat_id, video_path)
             await message.delete()
@@ -65,6 +63,6 @@ class ImageToGifMod(loader.Module):
             os.remove(photo)
             os.remove(video_path)
 
-        except subprocess.CalledProcessError as e:
+        except Exception as e:
             await utils.answer(message, self.strings["convert_error"].format(str(e)))
             return
