@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # meta developer: @ghosvxmodules
 # requires: requests bs4
 
